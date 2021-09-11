@@ -8,6 +8,7 @@ export default async function BGGImport(user = "gnowak") {
     .then((data) =>
       data.querySelectorAll("item").forEach((item) => {
         collection.push({
+          id: item.getAttribute("objectid"),
           name: item.querySelector("name").innerHTML,
           thumbnail: item.querySelector("thumbnail").innerHTML,
         })
