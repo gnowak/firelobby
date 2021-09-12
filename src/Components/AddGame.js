@@ -25,17 +25,17 @@ export function AddGame() {
   }
 
   return (
-    <div className="column is-one-quarter ">
-      <div className="columns is-centered is-vcentered is-multiline is-flex-direction-column mt-6">
+    <div className="column card is-one-quarter-desktop is-half-mobile is-onethird-tablet">
+      <div className="columns  is-mobile is-centered is-vcentered is-multiline is-flex-direction-column mt-6">
         <div className="card-image">
           <figure className="image ">
             <FiPlusCircle size="5em" className="" />
           </figure>
         </div>
-        <div className="columns card-content is-vcentered is-centered is-multiline">
+        <div className="columns is-mobile card-content is-vcentered is-centered is-multiline">
           <div className="media">
             <div className="media-content">
-              <form id="add-game" onSubmit={handleSubmit}>
+              <form id="add-game" onSubmit={handleSubmit} className="box">
                 <p className="title is-4">
                   <input type="text" name="name" placeholder="Game Name" />
                 </p>
@@ -46,7 +46,7 @@ export function AddGame() {
                     placeholder="Thumbnail URL"
                   />
                 </p>
-                <div className="columns is-centered is-vcentered">
+                <div className="columns block is-mobile is-centered is-vcentered ">
                   <button className="button is-primary" type="submit">
                     Add Game
                   </button>

@@ -6,7 +6,7 @@ export function GameCard({ game }) {
 
   const gamesCollection = useFirestore().collection("games")
   const lobbyCollection = useFirestore().collection("lobby")
-  const games = useFirestoreCollectionData(gamesCollection)
+  //   const games = useFirestoreCollectionData(gamesCollection)
   //   const lobby = useFirestoreCollectionData(lobbyCollection)
 
   const suggestGame = async () => {
@@ -33,7 +33,7 @@ export function GameCard({ game }) {
   }
 
   return (
-    <div className="column is-one-quarter is-clipped">
+    <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile is-clipped">
       <div
         id={game.name.replace(/\s+/g, "-").toLowerCase()}
         className="game-card card">
@@ -54,7 +54,7 @@ export function GameCard({ game }) {
             />
             <div
               id="delete-overlay"
-              className="columns is-vcentered is-hidden is-overlay is-centered">
+              className="columns is-mobile is-vcentered is-hidden is-overlay is-centered">
               <div className="column is-narrow">
                 <button className="button" onClick={confirmDelete}>
                   Delete
@@ -66,7 +66,7 @@ export function GameCard({ game }) {
         <div className="card-content">
           <div className="media">
             <div className="media-content">
-              <p className="title is-4">{game.name}</p>
+              <p className="title is-4 is-size-5-mobile">{game.name}</p>
             </div>
           </div>
         </div>

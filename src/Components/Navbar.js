@@ -3,9 +3,9 @@ import { AuthenticationButtons } from "./AuthenticationButtons"
 
 export function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">Fire Lobby 🔥</div>
-      <div className="navbar-menu">
+    <nav className="navbar is-flex-touch is-flex-desktop is-justify-content-space-between	">
+      <div className="navbar-brand is-flex-shrink-1">Fire Lobby 🔥</div>
+      <div className="navbar-menu is-flex-shrink-1 is-active">
         <div className="navbar-start"></div>
         <div className="navbar-end">
           <div className="navbar-item">
