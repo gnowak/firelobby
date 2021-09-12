@@ -1,13 +1,11 @@
 import React from "react"
-import { useFirestore, useFirestoreCollectionData, useUser } from "reactfire"
+import { useFirestore, useUser } from "reactfire"
 
 export function GameCard({ game }) {
   const { uid } = useUser()
 
   const gamesCollection = useFirestore().collection("games")
   const lobbyCollection = useFirestore().collection("lobby")
-  //   const games = useFirestoreCollectionData(gamesCollection)
-  //   const lobby = useFirestoreCollectionData(lobbyCollection)
 
   const suggestGame = async () => {
     await lobbyCollection
