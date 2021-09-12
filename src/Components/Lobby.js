@@ -28,6 +28,7 @@ export function Lobby() {
             <p className="title">
               {m.displayName} - {m.ready ? "Ready 🎮" : "Not Ready ❌"}
             </p>
+            <p>{m.suggestion ? "Suggestion: " + m.suggestion : ""}</p>
           </article>
         )
       })}
