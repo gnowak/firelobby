@@ -1,8 +1,8 @@
 import React from "react"
-import { useFirestore, useUser } from "reactfire"
+import { useFirestore, useFirestoreCollectionData, useUser } from "reactfire"
 
 export function GameCard({ game }) {
-  const { uid } = useUser()
+  const { email, uid } = useUser()
 
   const gamesCollection = useFirestore().collection("games")
   const lobbyCollection = useFirestore().collection("lobby")
@@ -32,9 +32,7 @@ export function GameCard({ game }) {
 
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile is-clipped">
-      <div
-        id={game.name.replace(/\s+/g, "-").toLowerCase()}
-        className="game-card card">
+      <div id={game.name.replace(/\s+/g, "-").toLowerCase()} className="card">
         <div className="card-image">
           <figure className="image is-4by3">
             <img

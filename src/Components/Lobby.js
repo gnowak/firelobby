@@ -1,8 +1,11 @@
 import React from "react"
 import { useFirestore, useFirestoreCollectionData, useUser } from "reactfire"
+import { Vote } from "./Vote"
+import { GameCollection } from "./GameCollection"
 
 export function Lobby() {
   const { email, displayName, uid } = useUser()
+
   const lobbyCollection = useFirestore().collection("lobby")
   const lobby = useFirestoreCollectionData(lobbyCollection)
 
@@ -32,9 +35,9 @@ export function Lobby() {
           </article>
         )
       })}
-      <div className="columns">
+      <div className="columns is-4">
         {userInLobby && (
-          <div className="column is-1">
+          <div className="column is-1 mr-4">
             <button
               className="button is-primary"
               onClick={() => toggleReadiness(!userInLobby.ready)}>
@@ -54,6 +57,8 @@ export function Lobby() {
           )}
         </div>
       </div>
+      {userInLobby && <Vote />}
+      {userInLobby && <GameCollection />}
     </div>
   )
 }

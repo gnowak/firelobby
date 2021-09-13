@@ -8,7 +8,6 @@ import { AuthCheck, FirebaseAppProvider, SuspenseWithPerf } from "reactfire"
 
 import { Navbar } from "./Components/Navbar"
 import { Lobby } from "./Components/Lobby"
-import { GameCollection } from "./Components/GameCollection"
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
         <Navbar />
         <AuthCheck fallback={<p>Not Logged In...</p>}>
           <Lobby></Lobby>
-          <GameCollection />
         </AuthCheck>
       </SuspenseWithPerf>
     </FirebaseAppProvider>
